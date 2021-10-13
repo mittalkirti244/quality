@@ -39,5 +39,25 @@
       "no-console": "off",
       "require-atomic-updates": "off"
     }
+  },
+  "cds": {
+    "requires": {
+      "country": {
+        "kind": "odata-v2",
+        "model": "srv/external/country",
+        "credentials": {
+          "url": "http://137.116.78.232:8000/sap/opu/odata/sap/API_COUNTRY_SRV/",
+          "username": "51673070",
+          "password": "sap@123"
+        }
+      },
+      "db": {
+        "kind": "sqlite",
+        "model": "*",
+        "credentials": {
+          "database": "myproj.db"
+        }
+      }
+    }
   }
 }
