@@ -1,16 +1,18 @@
 namespace adagency;
 
-using {
-    cuid,
-    //Country
-} from '@sap/cds/common';
+using {cuid} from '@sap/cds/common';
+
+using {country as c} from '../srv/external/country';
+//using {country as c} from '../srv/adDetail-service';
+
+//using {CountryText as Country/} from '../srv/adDetail-service';
 
 entity AdDetails : cuid {
     key ID             : UUID @odata.Type : 'Edm.String'  @Core.Computed;
         userID         : String;
         title          : String;
         textContent    : LargeString;
-       // country        : Country;
+        adCountry      : String(3);
         category       : Association to Category;
         graphicContent : Association to many GraphicContent
                              on graphicContent.addetails = $self;
