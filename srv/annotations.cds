@@ -5,7 +5,9 @@ using from '@sap/cds/common';
 annotate AdDetailService.AdDetails with @odata.draft.enabled;
 
 annotate AdDetailService.AdDetails with @(UI : {
-    SelectionFields     : [categoryName],
+    SelectionFields     : [
+        categoryName
+    ],
     LineItem            : [
         {
             Value : userID,
@@ -28,6 +30,11 @@ annotate AdDetailService.AdDetails with @(UI : {
             Value : category_ID,
             Label : 'Category ID'
         },
+        {
+            $Type : 'UI.DataField',
+            Value : adCountry,
+            Label : 'Ad Country'
+        },
     ],
 
     HeaderInfo          : {
@@ -48,6 +55,7 @@ annotate AdDetailService.AdDetails with @(UI : {
         {Value : title},
         {Value : textContent},
         {Value : categoryName},
+        {Value : adCountry},
         {
             Value : graphicContent.image,
             Label : 'File Name'
@@ -87,6 +95,31 @@ annotate AdDetailService.AdDetails with {
                 LocalDataProperty : 'categoryName',
                 ValueListProperty : 'name'
             }]
+        }
+    });
+}
+
+annotate AdDetailService.AdDetails with {
+    adCountry @(Common : {
+        FieldControl : #Mandatory,
+        ValueList    : {
+            CollectionPath  : 'CountryText',
+            Label           : 'Country Text',
+            SearchSupported : true,
+            Parameters      : [{
+                $Type             : 'Common.ValueListParameterInOut',
+                LocalDataProperty : 'adCountry',
+                ValueListProperty : 'Country'
+            },
+            {
+               $Type             : 'Common.ValueListParameterFilterOnly',
+                ValueListProperty : 'countryName' 
+            },
+            {
+               $Type             : 'Common.ValueListParameterFilterOnly',
+                ValueListProperty : 'language' 
+            }
+            ]
         }
     });
 }
