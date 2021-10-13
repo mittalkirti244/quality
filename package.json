@@ -46,19 +46,17 @@
         "kind": "sqlite",
         "model": "*",
         "credentials": {
-            
-          "database": "adagency.db"
+          "database": "adproj.db"
         }
       },
       "country": {
         "kind": "odata-v2",
         "model": "srv/external/country",
         "credentials": {
-                    "url": "http://137.116.78.232:8000/sap/opu/odata/sap/API_COUNTRY_SRV/",
-                    "username": "51673070",
-                    "password": "sap@123"
-                }
-
+          "url": "http://137.116.78.232:8000/sap/opu/odata/sap/API_COUNTRY_SRV/",
+          "username": "51673070",
+          "password": "sap@123"
+        }
       }
     }
   }
