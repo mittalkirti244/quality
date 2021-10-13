@@ -1,13 +1,13 @@
 namespace adagency;
 
-using {cuid, managed, Country} from '@sap/cds/common';
+using {cuid, managed} from '@sap/cds/common';
 
 entity ManageOrder : cuid, managed {
     key ID          : UUID @odata.Type : 'Edm.String';
         planID      : String;
         description : LargeString;
         address     : LargeString;
-        country     :Country;
+        country     : String;
         totalAmount : Double;
         status      : OrderStatus;      
 }
