@@ -42,6 +42,13 @@
   },
   "cds": {
     "requires": {
+      "db": {
+        "kind": "sqlite",
+        "model": "*",
+        "credentials": {
+          "database": "adproj.db"
+        }
+      },
       "country": {
         "kind": "odata-v2",
         "model": "srv/external/country",
@@ -50,13 +57,7 @@
           "username": "51673070",
           "password": "sap@123"
         }
-      },
-      "db": {
-        "kind": "sqlite",
-        "model": "*",
-        "credentials": {
-          "database": "adproj.db"
-        }
+
       }
     }
   }
