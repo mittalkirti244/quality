@@ -54,7 +54,6 @@
       },
       "db": {
         "kind": "sqlite",
-        "model": "*",
         "credentials": {
           "database": "adproj.db"
         }
